@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+function calcular(){
+var valor = document.getElementById("valor").value;
+
+var quantidade = document.getElementById("quantidade").value;
+var var_quant = valor / quantidade;
+
+document.getElementById("var_qnt").value = var_quant;
+}
+    </script>
+</head>
+<body>
+    
+    <label>Valor</label>
+<input type="text" id="valor" onblur="calcular()">
+
+<label>Quantidade</label>
+<input type="text" id="quantidade" onblur="calcular()">
+
+<label>Valor/Quantidade</label>
+<input type="text" id="var_qnt" value='' readonly>
+</body>
+</html>
+
+

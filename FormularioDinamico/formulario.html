@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabrica de Rosquinha</title>
+    <script>
+     function calcular(){
+         const MORANGO = 2.00;
+         const CHOCOLATE = 2.50;
+         const tax = 1;
+         let quantidadeMorango = parseFloat(document.getElementById("morango").value);
+         let quantidadeChocolate = parseFloat(document.getElementById("chocolate").value);
+         let subtotal =  (quantidadeMorango * MORANGO) + (quantidadeChocolate * CHOCOLATE);
+         let taxa = subtotal + tax;
+         let total = subtotal + taxa;
+        
+            document.getElementById("subtotal").value = "$" + subtotal;
+            document.getElementById("taxa").value = "$" + taxa;
+            document.getElementById("total").value ="$" +  total;
+
+        
+     }
+
+   function validacao(){
+    var nome = document.getElementById("nome").value;
+    var minutos = document.getElementById("minutos").value;
+       if(nome == "") {
+    alert("Nome não informado");
+    return false;
+       }
+     else if(minutos == ""){
+      alert("Forneça um numero")
+      return false;
+      }
+            else{
+                form.submit();
+            }
+
+     }
+     
+
+    </script>
+</head>
+<style>
+    #conteiner{
+        margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 100px;
+    }
+   
+ #imagem{
+   float:left;
+   width: 100px;
+   height: 400px;
+ }
+
+    #formalario{
+position:relative;
+float: inherit;
+border-width:40px;
+width:300px;
+background-color: peachpuff;
+align-items: left;
+}
+
+#DivA{
+position: relative;
+float: none;
+border-width:2px;
+width:auto;
+height: auto;
+left:300px;
+align-self: center;
+
+}
+    body{
+        left: 100;
+    }
+
+    form {
+        margin: 0 auto;
+        widows: 500px;
+        padding: 1px;
+        
+        border-radius: 1em;
+    }
+
+    label {
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+    }
+
+    input,
+    textarea {
+        font: 1em sans-serif;
+        width: 300px;
+        box-sizing: border-box;
+        border: 1px solid #999;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #000;
+    }
+
+    textarea {
+        vertical-align: top;
+        height: 5em;
+        resize: vertical;
+
+    }
+
+    .button {
+        padding-left: 50px;
+    }
+
+    button {
+        margin-left: 300px;
+    }
+</style>
+
+<body>
+        <div id="imagem">
+            <img src="fotosFormulario/homerSimpson.png" height="400">
+        </div>
+        <div id="conteiner">
+    <div id="DivA">
+        
+    </div>
+    
+    <div id="formalario">
+    <form name="orderform" action="donuts.php" method="POST">
+       
+        <ul>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome"> 
+        </ul>
+       
+        <ul>
+
+            <label for="morango">Morango: </label>
+            <input type="text" id="morango" onchange="calcular()" >
+
+        </ul>
+        <ul>
+
+            <label for="chocolate">Chocalate: </label>
+            <input type="text" id="chocolate" onchange="calcular()">
+
+        </ul>
+        <ul>
+
+            <label for="minutos">Minutos Da Entrega: </label>
+            <input type="text" id="minutos">
+
+        </ul>
+        <ul>
+            <label>subtotal: </label>
+            <input type="text" id="subtotal" value="" readonly>
+        </ul>
+        
+        <ul>
+            <label for="taxa">taxa:</label>
+            <input type="text" id="taxa" value="" readonly>
+        </ul>
+        <ul>
+            <label for="total">total:</label>
+            <input type="text" id="total" value="" readonly>
+        </ul>
+        <button type="submit" onclick="return validacao(this.form)"> Comprar</button>
+
+    </form>
+</div>
+</div>
+</body>
+
+</html>

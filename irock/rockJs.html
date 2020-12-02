@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function touchRock(){
+      
+                alert("bem-vinda " + nome)
+             document.getElementById("rockImg").src="fotos/feliz.png"
+            
+        }
+
+        function Informacao(){
+            nome = prompt("Qual é seu nome?")
+        }
+    </script>
+</head>
+<body onload="alert('ola, eu sou o berineu')">
+    <div style="margin-top: 100px; text-align: center;">
+    <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="Informacao() +touchRock()">
+    </div>
+</body>
+</html>

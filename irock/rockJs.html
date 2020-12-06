@@ -6,21 +6,23 @@
     <title>Document</title>
 
     <script>
-        function touchRock(){
-      
-                alert("bem-vinda " + nome)
-             document.getElementById("rockImg").src="fotos/feliz.png"
-            
+
+        function Feliz(){
+            document.getElementById('rockImg').src='fotos/feliz.png'
+            setInterval(triste,9000);
+
         }
 
-        function Informacao(){
-            nome = prompt("Qual é seu nome?")
+        function triste(){
+            document.getElementById('rockImg').src='fotos/enjoo.png'
+
         }
+
     </script>
 </head>
 <body onload="alert('ola, eu sou o berineu')">
     <div style="margin-top: 100px; text-align: center;">
-    <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="Informacao() +touchRock()">
+    <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="Feliz()">
     </div>
 </body>
 </html>

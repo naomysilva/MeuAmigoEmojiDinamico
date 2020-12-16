@@ -6,27 +6,36 @@
     <title>Document</title>
 
     <script>
-
+        var userName;
+   
         function resize(){
             document.getElementById('rockImg').style.height = (document.body.clientHeight-100)*0.9;
         }
 
-        function Feliz(){
+        function TocarNoEmoji(){
+            if(userName){
+                alert("eu gosto de atenção " + userName + " obrigada")
+            } else{
+                userName = prompt("Qual o seu nome?","digite seu nome aqui")
+              if(userName){
+                alert("Bom conhecer você, " + userName)
+              }
+            }
             document.getElementById('rockImg').src='fotos/feliz.png'
-            setInterval(triste,9000);
-
+         
+         setInterval("document.getElementById('rockImg').src='fotos/enjoo.png';", 9000);
         }
 
-        function triste(){
-            document.getElementById('rockImg').src='fotos/enjoo.png'
+      
+           
 
-        }
+       
 
     </script>
 </head>
-<body onload="resize()" onresize="resize();">
+<body onload="resize(); interacao()" onresize="resize();">
     <div style="margin-top: 100px; text-align: center;">
-    <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="Feliz()">
+    <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="TocarNoEmoji()">
     </div>
 </body>
 </html>

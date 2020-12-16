@@ -7,6 +7,10 @@
 
     <script>
 
+        function resize(){
+            document.getElementById('rockImg').style.height = (document.body.clientHeight-100)*0.9;
+        }
+
         function Feliz(){
             document.getElementById('rockImg').src='fotos/feliz.png'
             setInterval(triste,9000);
@@ -20,7 +24,7 @@
 
     </script>
 </head>
-<body onload="alert('ola, eu sou o berineu')">
+<body onload="resize()" onresize="resize();">
     <div style="margin-top: 100px; text-align: center;">
     <img id="rockImg" src="fotos/convencido.png" alt="irock" onclick="Feliz()">
     </div>
